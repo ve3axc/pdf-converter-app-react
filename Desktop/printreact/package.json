@@ -8,12 +8,12 @@
     "@testing-library/user-event": "^13.5.0",
     "jspdf": "^2.5.2",
     "pdf-lib": "^1.17.1",
-    "pdfjs-dist": "^2.16.105",
+    "pdfjs-dist": "^4.8.69",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-spinners": "^0.14.1",
-    "react-scripts": "5.0.1",
     "react-app-rewired": "^2.2.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1",
+    "react-spinners": "^0.14.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
