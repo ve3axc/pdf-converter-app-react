@@ -48,19 +48,19 @@ app.post('/convert', async (req, res) => {
     /********************************************
      * Step C: Create the new PDF & embed pages
      ********************************************/
-    // The page order is [0, 3, 1, 2]
+    // The new page order is [3, 0] (Page 4 on the left, Page 1 on the right)
     const newPdfDoc = await PDFDocument.create();
-    const pageIndices = [0, 3, 1, 2];
+    const pagePairs = [
+      { left: 3, right: 0 }, // Page 4 on the left, Page 1 on the right
+      { left: 1, right: 2 }  // Page 2 on the left, Page 3 on the right
+    ];
 
-    for (let i = 0; i < pageIndices.length; i += 2) {
-      const leftPageIndex = pageIndices[i];
-      const rightPageIndex = pageIndices[i + 1];
-
-      console.log(`Embedding pages: Left=${leftPageIndex}, Right=${rightPageIndex}`);
+    for (const pair of pagePairs) {
+      console.log(`Embedding pages: Left=${pair.left}, Right=${pair.right}`);
 
       // Get the pages from original
-      const leftPage = pdfDoc.getPage(leftPageIndex);
-      const rightPage = pdfDoc.getPage(rightPageIndex);
+      const leftPage = pdfDoc.getPage(pair.left);
+      const rightPage = pdfDoc.getPage(pair.right);
 
       // Embed them
       const [embeddedLeft] = await newPdfDoc.embedPages([leftPage]);
