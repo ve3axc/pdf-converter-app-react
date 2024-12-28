@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>4-Page PDF to 17x11 Converter</title>
+</head>
+<body>
+  <h1>Convert 4-page PDF to 17x11</h1>
+
+  <!-- 
+    An HTML form that sends a POST request to /convert.
+    We specify `enctype="multipart/form-data"` to allow file upload.
+    `target="_blank"` opens the resulting PDF download in a new tab/window.
+    You can remove `target="_blank"` if you want it to replace the current page.
+  -->
+  <form 
+    id="uploadForm" 
+    method="POST" 
+    action="/convert" 
+    enctype="multipart/form-data" 
+    target="_blank"
+  >
+    <input type="file" name="pdfFile" accept=".pdf" />
+    <button type="submit">Convert and Download</button>
+  </form>
+
+</body>
+</html>
