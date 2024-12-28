@@ -1,7 +1,7 @@
 {
   "name": "printwebapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "A web app for printing with Express and pdf-lib",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
